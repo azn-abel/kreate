@@ -18,8 +18,7 @@ TL;DR - I wanted to make it *a little less annoying* to generate Kubernetes mani
 
 Writing Kubernetes manifests is hardly ever done from scratch. Two common options for getting started (neither of which are very convenient) are:
 - Sifting through the [docs](https://k8s.io/docs) to find a template for the desired component
-- Running something like :
-`kubectl create deployment sample-deployment --image=nginx --dry-run=client -o yaml > sample-deployment.yaml`
+- Running something like: `kubectl create deployment sample-deployment --image=nginx --dry-run=client -o yaml > sample-deployment.yaml`
 
 kreate simplifies the syntax of the above command to:
 `kreate deployment > sample-deployment.yaml`
@@ -31,4 +30,4 @@ Additionally, `kubectl create` has some features that can get pretty annoying wh
 - Generating any manifest files requires the `--dry-run=client` and `-o yaml` options, which become annoying to type out every time
 - Manifests for some components (such as NetworkPolicies) cannot be created with `kubectl create`.
 
-**To be clear:** `kubectl create` is not a bad option for quickly creating K8s components, it's just not necessarily optimized for generating manifest files, which is sometimes more helpful.
+**To be clear:** `kubectl create` is not a bad option for quickly creating K8s components. It's just not optimized for generating manifest files, which is sometimes more helpful.
