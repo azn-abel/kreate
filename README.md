@@ -1,5 +1,5 @@
 # kreate - WIP
-
+[![Go Report Card](https://goreportcard.com/badge/github.com/azn-abel/kreate)](https://goreportcard.com/report/github.com/azn-abel/kreate)
 kreate makes it easier for beginners to get started with Kubernetes by generating manifest files for common components, such as Pods, Deployments, Services, and NetworkPolicies.
 
 ## Getting started
