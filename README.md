@@ -23,9 +23,11 @@ Writing Kubernetes manifests is hardly ever done from scratch. Two common option
 kreate simplifies the syntax of the above command to:
 `kreate deployment > sample-deployment.yaml`
 
-While kreate doesn't allow the variety of options that `kubectl create` does (--image, --namespace, etc.), the resulting manifest file can still be easily edited in VSCode, Vim, or any other editor of your choice. Even with all the options that kubectl offers, manual edits are likely needed before applying the manifests in any case.
+While kreate doesn't allow the variety of options that `kubectl create` does (--image, --namespace, etc.), manual edits and review are likely needed before applying the manifests regardless, which (in my opinion) defeats the purpose of having so many options.
 
-Additionally, with `kubectl create`, some beginners may struggle with figuring out and remembering which command to run and which options are required for each component. To name a few of these disrepancies:
+Additionally, `kubectl create` has some features that can get pretty annoying when it comes to generating manifests:
 - Generating pod manifests is done with `kubectl run`, *not* `kubectl create`, which can lead to confusion
 - Generating any manifest files requires the `--dry-run=client` and `-o yaml` options, which become annoying to type out every time
 - Manifests for some components (such as NetworkPolicies) cannot be created with `kubectl create`.
+
+**To be clear:** `kubectl create` is not a bad option for quickly creating K8s components, it's just not necessarily optimized for generating manifest files, which is sometimes more helpful.
