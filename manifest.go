@@ -44,3 +44,16 @@ spec:
       limits: # Adjust these as needed
         cpu: 50Mi
         memory: 200Mi`
+
+var ServiceManifest string = `apiVersion: v1
+kind: Service
+metadata:
+  name: <service-name>
+spec:
+  selector:
+    app: <app-name>
+  ports:
+    - protocol: TCP
+      port: <service-port>
+      targetPort: <container-port>
+  type: ClusterIP # Other options: NodePort, LoadBalancer`
